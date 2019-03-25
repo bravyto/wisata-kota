@@ -13,18 +13,6 @@
   <link rel="stylesheet" type="text/css" href="plugins/OwlCarousel2-2.2.1/animate.css"> -->
   <link rel="stylesheet" type="text/css" href="styles/login_styles.css">
   <!-- <link rel="stylesheet" type="text/css" href="styles/responsive.css"> -->
-  <script>
-    function myFunction() {
-      var email = document.getElementById("login__email").value;
-      var password = document.getElementById("login__password").value;
-      if ( email == "wisatakota@gmail.com" && password == "password") {
-        window.location.href = "/index.html";
-        // return false;
-      } else {
-        return false;
-      }
-    }
-  </script>
 </head>
 
 
@@ -38,8 +26,8 @@
 
     <div class="grid">
 
-      <form class="form login" onsubmit="myFunction()">
-
+      <form class="form login" id="form__login">
+        <center><p id="wrong_credential" style="color: red;"></p></center>
         <div class="form__field">
           <label for="login__email"><svg class="icon"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#user"></use></svg><span class="hidden">Email</span></label>
           <input id="login__email" type="email" name="email" class="form__input" placeholder="Email" required>
@@ -64,3 +52,19 @@
 
 
   </body>
+
+  <script>
+    var a = document.getElementById("form__login");
+    a.addEventListener("submit", function(event) {
+      event.preventDefault();
+      var email = document.getElementById("login__email").value;
+      var password = document.getElementById("login__password").value;
+      if ( email == "wisatakota@gmail.com" && password == "password") {
+        window.location.assign("/index.html");
+        return false;
+      } else {
+        document.getElementById("wrong_credential").innerHTML = "Wrong email or password";
+        return false;
+      }
+    })
+  </script>
