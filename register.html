@@ -134,12 +134,12 @@
 				<div class="col-lg-7">
 					<div class="contact_form_container">
 						<div class="contact_title">Registration</div>
-						<form action="#" onsubmit="registerSubmit()" id="contact_form" class="contact_form" style="margin-top:20px">
+						<form onsubmit="registerSubmit()" id="contact_form" class="contact_form" style="margin-top:20px">
 							<input type="text" id="register_form_name" class="contact_form_subject input_field" placeholder="Name" required="required" data-error="Name is required.">
 							<input type="email" id="register_form_email" class="contact_form_subject input_field" placeholder="E-mail" required="required" data-error="Email is required.">
 							<input type="tel" id="register_form_phone" class="contact_form_subject input_field" placeholder="Phone Number" required="required" data-error="Subject is required.">
-							<input type="password" id="register_form_password" class="contact_form_subject input_field" placeholder="Password" required="required" data-error="Subject is required.">
-							<input type="password" id="register_form_confirm_password" class="contact_form_subject input_field" placeholder="Repeat Password" required="required" data-error="Subject is required.">
+							<input type="password" onchange="validatePassword()" id="register_form_password" class="contact_form_subject input_field" placeholder="Password" required="required" data-error="Subject is required.">
+							<input type="password" onkeyup="validatePassword()" id="register_form_confirm_password" class="contact_form_subject input_field" placeholder="Repeat Password" required="required" data-error="Subject is required.">
 							<button type="submit" id="form_register_submit_button" class="form_submit_button button">Register Now</button>
 						</form>
 					</div>
@@ -299,8 +299,20 @@ Copyright &copy;<script>document.write(new Date().getFullYear());</script> All r
 <script src="js/custom.js"></script>
 
 <script>
-  function registerSubmit(){
+	var pass = document.getElementById("register_form_password")
+	var repeatPass = document.getElementById("register_form_confirm_password")
 
+	function validatePassword(){
+		if(pass.value!= repeatPass.value) {
+			repeatPass.setCustomValidity("Passwords Don't Match");
+		} else {
+			repeatPass.setCustomValidity('');
+		}
+	}
+
+	function registerSubmit(){
+		event.preventDefault()
+		window.location.href = "index.html";
 	}
 </script>
 </body>
