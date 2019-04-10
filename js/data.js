@@ -121,8 +121,49 @@ var data = {
   ],
   paket_wisata: [
     {
-      nama: 'Jakarta Tour 3D2N',
-
+      nama: 'Pulau Pramuka 3D2N',
+      durasi: '3D2N',
+      bintang: '4',
+      rating: '9.3',
+      harga: 500000,
+      tanggal_berangkat: '05-05-2019',
+      tanggal_pulang: '08-05-2019',
+      img_url: 'pulau_pramuka.jpg',
+      deskripsi: 'Pulau Pramuka merupakan salah satu pulau yang berada pada gugusan Kepulauan Seribu. Pulau ini merupakan pusat administrasi dan pemerintahan Kabupaten Administratif Kepulauan Seribu. Pulau Pramuka termasuk ke dalam Kelurahan Pulau Panggang.',
+      itenerary:[
+        {
+          hari: 1,
+          lokasi: 'Pulau Pramuka',
+          detail: 'Berangkat dari pelabuhan',
+          img_url: ''
+        },
+        {
+          hari: 2,
+          lokasi: 'Pulau Macan dan Pulau Singa',
+          detail: 'Snorkling di pulau Macan',
+          img_url: ''
+        },
+        {
+          hari: 3,
+          lokasi: 'Pulau Macan dan Pulau Singa',
+          detail: 'Kembali ke Jakarta',
+          img_url: ''
+        }
+      ]
+    }
+  ],
+  flight: [
+    {
+      nama: 'Lion',
+      logo: 'lion_logo.png',
+      harga: 1100000,
+      kota_berangkat: 'Jakarta',
+      bandara_berangkat: 'Soekarnao Hatta International Airport',
+      waktu_berangkat: '06:00',
+      kota_tiba: 'Denpasar',
+      bandara_tiba: 'Ngurah Rai International Airport',
+      waktu_tiba: '07:00',
+      durasi: "1 Jam"
     }
   ]
 }

@@ -405,11 +405,9 @@ $(document).ready(function()
 
 	var cities = []
 
-	$.map(data.kota, function( value, key ){
+	$.map(data.kota, function( value ){
 		cities.push([value.nama, value.provinsi])
 	})
-
-	console.log(data.kota)
 
 	new autoComplete({
     selector: '#destination_hotel',
