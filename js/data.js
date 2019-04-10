@@ -74,7 +74,7 @@ var data = {
       bintang: '4',
       rating: '8.7',
       harga: '1375000',
-      img_url: 'jakarta_aquarium.jpg',
+      img_url: 'century_park_hotel.jpeg',
       deskripsi: 'Century Park Hotel, a luxury 4 stars business hotel near Jakarta Convention Center (JCC) Senayan. Book your hotel in Central Jakarta at the best price.',
       kota: 'Jakarta',
       kamar: [
@@ -98,7 +98,7 @@ var data = {
       bintang: '5',
       rating: '9.3',
       harga: '1355000',
-      img_url: 'jakarta_aquarium.jpg',
+      img_url: 'the_sultan.jpg',
       deskripsi: 'The Sultan Hotel & Residence Jakarta is five stars hotel with a touch of royal Javanese, perfect for business or leisure trip in Jakarta.',
       kota: 'Jakarta',
       kamar: [
