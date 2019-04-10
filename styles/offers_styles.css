@@ -1400,7 +1400,7 @@ section
 	position: absolute;
 	left: 0;
 	bottom: 27px;
-	width: 180px;
+	width: auto;
 	height: 33px;
 	background: #fa9e1b;
 	overflow: hidden;
@@ -1414,6 +1414,7 @@ section
 	text-transform: uppercase;
 	line-height: 35px;
 	padding-left: 22px;
+	padding-right: 22px;
 }
 .offers_content
 {

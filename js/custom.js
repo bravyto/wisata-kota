@@ -16,6 +16,8 @@
 
 ******************************/
 
+
+
 $(document).ready(function()
 {
 	"use strict";
@@ -400,5 +402,119 @@ $(document).ready(function()
 		}
 	}
 
+
+	var cities = []
+
+	$.map(data.kota, function( value, key ){
+		cities.push([value.nama, value.provinsi])
+	})
+
+	console.log(data.kota)
+
+	new autoComplete({
+    selector: '#destination_hotel',
+    minChars: 1,
+    source: function(term, suggest){
+        term = term.toLowerCase();
+        var choices = cities;
+        var suggestions = [];
+        for (var i=0;i<choices.length;i++)
+            if (~(choices[i][0]+' '+choices[i][1]).toLowerCase().indexOf(term)) suggestions.push(choices[i]);
+        suggest(suggestions);
+    },
+    renderItem: function (item, search){
+        search = search.replace(/[-\/\\^$*+?.()|[\]{}]/g, '\\$&');
+        var re = new RegExp("(" + search.split(' ').join('|') + ")", "gi");
+        return '<div class="autocomplete-suggestion search-results" data-kota="'+item[0]+'" data-provinsi="'+item[1]+'" data-val="'+search+'"><div>'+item[0].replace(re, "<b>$1</b>")+'</div><div>'+item[1]+'</div></div>';
+    },
+    onSelect: function(e, term, item){
+				//alert('Item "'+item.getAttribute('data-kota')+' ('+item.getAttribute('data-provinsi')+')" selected by '+(e.type == 'keydown' ? 'pressing enter' : 'mouse click')+'.');
+				$('#destination_hotel').val(item.getAttribute('data-kota'))
+    }
+	});
+
+	new autoComplete({
+    selector: '#destination_car',
+    minChars: 1,
+    source: function(term, suggest){
+        term = term.toLowerCase();
+        var choices = cities;
+        var suggestions = [];
+        for (var i=0;i<choices.length;i++)
+            if (~(choices[i][0]+' '+choices[i][1]).toLowerCase().indexOf(term)) suggestions.push(choices[i]);
+        suggest(suggestions);
+    },
+    renderItem: function (item, search){
+        search = search.replace(/[-\/\\^$*+?.()|[\]{}]/g, '\\$&');
+        var re = new RegExp("(" + search.split(' ').join('|') + ")", "gi");
+        return '<div class="autocomplete-suggestion search-results" data-kota="'+item[0]+'" data-provinsi="'+item[1]+'" data-val="'+search+'"><div>'+item[0].replace(re, "<b>$1</b>")+'</div><div>'+item[1]+'</div></div>';
+    },
+    onSelect: function(e, term, item){
+			$('#destination_car').val(item.getAttribute('data-kota'))
+    }
+	});
+
+	new autoComplete({
+    selector: '#destination_plane',
+    minChars: 1,
+    source: function(term, suggest){
+        term = term.toLowerCase();
+        var choices = cities;
+        var suggestions = [];
+        for (var i=0;i<choices.length;i++)
+            if (~(choices[i][0]+' '+choices[i][1]).toLowerCase().indexOf(term)) suggestions.push(choices[i]);
+        suggest(suggestions);
+    },
+    renderItem: function (item, search){
+        search = search.replace(/[-\/\\^$*+?.()|[\]{}]/g, '\\$&');
+        var re = new RegExp("(" + search.split(' ').join('|') + ")", "gi");
+        return '<div class="autocomplete-suggestion search-results" data-kota="'+item[0]+'" data-provinsi="'+item[1]+'" data-val="'+search+'"><div>'+item[0].replace(re, "<b>$1</b>")+'</div><div>'+item[1]+'</div></div>';
+    },
+    onSelect: function(e, term, item){
+			$('#destination_plane').val(item.getAttribute('data-kota'))
+    }
+	});
+
+	new autoComplete({
+    selector: '#destination_trip',
+    minChars: 1,
+    source: function(term, suggest){
+        term = term.toLowerCase();
+        var choices = cities;
+        var suggestions = [];
+        for (var i=0;i<choices.length;i++)
+            if (~(choices[i][0]+' '+choices[i][1]).toLowerCase().indexOf(term)) suggestions.push(choices[i]);
+        suggest(suggestions);
+    },
+    renderItem: function (item, search){
+        search = search.replace(/[-\/\\^$*+?.()|[\]{}]/g, '\\$&');
+        var re = new RegExp("(" + search.split(' ').join('|') + ")", "gi");
+        return '<div class="autocomplete-suggestion search-results" data-kota="'+item[0]+'" data-provinsi="'+item[1]+'" data-val="'+search+'"><div>'+item[0].replace(re, "<b>$1</b>")+'</div><div>'+item[1]+'</div></div>';
+    },
+    onSelect: function(e, term, item){
+			$('#destination_trip').val(item.getAttribute('data-kota'))
+    }
+	});
+
+	new autoComplete({
+    selector: '#destination_activity',
+    minChars: 1,
+    source: function(term, suggest){
+        term = term.toLowerCase();
+        var choices = cities;
+        var suggestions = [];
+        for (var i=0;i<choices.length;i++)
+            if (~(choices[i][0]+' '+choices[i][1]).toLowerCase().indexOf(term)) suggestions.push(choices[i]);
+        suggest(suggestions);
+    },
+    renderItem: function (item, search){
+        search = search.replace(/[-\/\\^$*+?.()|[\]{}]/g, '\\$&');
+        var re = new RegExp("(" + search.split(' ').join('|') + ")", "gi");
+        return '<div class="autocomplete-suggestion search-results" data-kota="'+item[0]+'" data-provinsi="'+item[1]+'" data-val="'+search+'"><div>'+item[0].replace(re, "<b>$1</b>")+'</div><div>'+item[1]+'</div></div>';
+    },
+    onSelect: function(e, term, item){
+			$('#destination_activity').val(item.getAttribute('data-kota'))
+    }
+	});
 	
 });
