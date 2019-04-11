@@ -1,10 +1,10 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<title>Wisata Kota | Athens</title>
+<title>Wisata Kota | Lasem</title>
 <meta charset="utf-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
-<meta name="description" content="Wisata Kota | Athens">
+<meta name="description" content="Wisata Kota | Lasem">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <link rel="stylesheet" type="text/css" href="styles/bootstrap4/bootstrap.min.css">
 <link href="plugins/font-awesome-4.7.0/css/font-awesome.min.css" rel="stylesheet" type="text/css">
@@ -135,7 +135,7 @@
 	<div class="home">
 		<div class="home_background parallax-window" data-parallax="scroll" data-image-src="images/single_background.jpg"></div>
 		<div class="home_content">
-			<div class="home_title">Athens</div>
+			<div class="home_title">Lasem</div>
 		</div>
 	</div>
 
@@ -159,11 +159,11 @@
 							<div class="search_tabs_container">
 								<div class="search_tabs d-flex flex-lg-row flex-column align-items-lg-center align-items-start justify-content-lg-between justify-content-start">
 									<div class="search_tab active d-flex flex-row align-items-center justify-content-lg-center justify-content-start"><img src="images/suitcase.png" alt=""><span>hotels</span></div>
-									<!-- <div class="search_tab d-flex flex-row align-items-center justify-content-lg-center justify-content-start"><img src="images/bus.png" alt="">car rentals</div> -->
+									<div class="search_tab d-flex flex-row align-items-center justify-content-lg-center justify-content-start"><img src="images/bus.png" alt="">car rentals</div>
 									<div class="search_tab d-flex flex-row align-items-center justify-content-lg-center justify-content-start"><img src="images/departure.png" alt="">flights</div>
-									<div class="search_tab d-flex flex-row align-items-center justify-content-lg-center justify-content-start"><img src="images/island.png" alt="">trips</div>
-									<div class="search_tab d-flex flex-row align-items-center justify-content-lg-center justify-content-start"><img src="images/cruise.png" alt="">cruises</div>
-									<!-- <div class="search_tab d-flex flex-row align-items-center justify-content-lg-center justify-content-start"><img src="images/diving.png" alt="">activities</div> -->
+									<!-- <div class="search_tab d-flex flex-row align-items-center justify-content-lg-center justify-content-start"><img src="images/island.png" alt="">trips</div> -->
+									<!-- <div class="search_tab d-flex flex-row align-items-center justify-content-lg-center justify-content-start"><img src="images/cruise.png" alt="">cruises</div> -->
+									<div class="search_tab d-flex flex-row align-items-center justify-content-lg-center justify-content-start"><img src="images/diving.png" alt="">activities</div>
 								</div>
 							</div>
 
@@ -278,7 +278,7 @@
 											</li>
 										</ul>
 									</div>
-									<button class="button search_button">search<span></span><span></span><span></span></button>
+									<button class="button search_button" onclick="window.location.href= 'hotel_offer.html'">search<span></span><span></span><span></span></button>
 								</form>
 							</div>
 
@@ -286,16 +286,16 @@
 
 							<div class="search_panel">
 								<form action="#" id="search_form_2" class="search_panel_content d-flex flex-lg-row flex-column align-items-lg-center align-items-start justify-content-lg-between justify-content-start">
-									<!-- <div class="search_item">
-										<div>destination</div>
-										<input type="text" class="destination search_input" required="required">
-									</div> -->
 									<div class="search_item">
-										<div>departure</div>
+										<div>Kota asal</div>
+										<input id="destination_trip" type="text" class="destination search_input" required="required">
+									</div>
+									<div class="search_item">
+										<div>start</div>
 										<input type="datetime-local" class="check_in search_input" placeholder="YYYY-MM-DD">
 									</div>
 									<div class="search_item">
-										<div>return</div>
+										<div>end</div>
 										<input type="datetime-local" class="check_out search_input" placeholder="YYYY-MM-DD">
 									</div>
 									<div class="search_item">
@@ -315,7 +315,7 @@
 											<option>2</option>
 										</select>
 									</div>
-									<button class="button search_button">search<span></span><span></span><span></span></button>
+									<button class="button search_button" onclick="window.location.href= 'car_offer.html'">search<span></span><span></span><span></span></button>
 								</form>
 							</div>
 
@@ -328,11 +328,11 @@
 										<input type="text" class="destination search_input" required="required">
 									</div> -->
 									<div class="search_item">
-										<div>start</div>
+										<div>departure</div>
 										<input type="date" class="check_in search_input" placeholder="YYYY-MM-DD">
 									</div>
 									<div class="search_item">
-										<div>end</div>
+										<div>return</div>
 										<input type="date" class="check_out search_input" placeholder="YYYY-MM-DD">
 									</div>
 									<div class="search_item">
@@ -352,7 +352,7 @@
 											<option>2</option>
 										</select>
 									</div>
-									<button class="button search_button">search<span></span><span></span><span></span></button>
+									<button class="button search_button" onclick="window.location.href= 'plane_offer.html'">search<span></span><span></span><span></span></button>
 								</form>
 							</div>
 
@@ -365,11 +365,11 @@
 										<input type="text" class="destination search_input" required="required">
 									</div> -->
 									<div class="search_item">
-										<div>departure</div>
+										<div>start</div>
 										<input type="datetime-local" class="check_in search_input" placeholder="YYYY-MM-DD">
 									</div>
 									<div class="search_item">
-										<div>return</div>
+										<div>end</div>
 										<input type="datetime-local" class="check_out search_input" placeholder="YYYY-MM-DD">
 									</div>
 									<div class="search_item">
@@ -389,7 +389,7 @@
 											<option>2</option>
 										</select>
 									</div>
-									<button class="button search_button">search<span></span><span></span><span></span></button>
+									<button class="button search_button" onclick="window.location.href= 'activity_offer.html'">search<span></span><span></span><span></span></button>
 								</form>
 							</div>
 
@@ -561,11 +561,11 @@
                                 <ul>
                                   <li class="contact_info_item d-flex flex-row">
                                     <div><div class="contact_info_icon"><img src="images/placeholder.svg" alt=""></div></div>
-                                    <div class="contact_info_text" style="color: black;">Athens 105 58, Greece</div>
+                                    <div class="contact_info_text" style="color: black;">Lasem 105 58, Indonesia</div>
                                   </li>
                                   <li class="contact_info_item d-flex flex-row">
                                     <div><div class="contact_info_icon"><img src="images/phone-call.svg" alt=""></div></div>
-                                    <div class="contact_info_text" style="color: black;">+30 21 0321 4172</div>
+                                    <div class="contact_info_text" style="color: black;">+62 21 0321 4172</div>
                                   </li>
                                   <li class="contact_info_item d-flex flex-row">
                                     <div><div class="contact_info_icon"><img src="images/planet-earth.svg" alt=""></div></div>
@@ -594,11 +594,11 @@
                                 <ul>
                                   <li class="contact_info_item d-flex flex-row">
                                     <div><div class="contact_info_icon"><img src="images/placeholder.svg" alt=""></div></div>
-                                    <div class="contact_info_text" style="color: black;">1301 Avenue, Athens, Greece</div>
+                                    <div class="contact_info_text" style="color: black;">1301 Avenue, Lasem, Indonesia</div>
                                   </li>
                                   <li class="contact_info_item d-flex flex-row">
                                     <div><div class="contact_info_icon"><img src="images/phone-call.svg" alt=""></div></div>
-                                    <div class="contact_info_text" style="color: black;">+44 20 7336 8898</div>
+                                    <div class="contact_info_text" style="color: black;">+62 20 7336 8898</div>
                                   </li>
                                   <li class="contact_info_item d-flex flex-row">
                                     <div><div class="contact_info_icon"><img src="images/planet-earth.svg" alt=""></div></div>

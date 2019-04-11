@@ -119,6 +119,50 @@ var data = {
       ]
     },
   ],
+  rental: [
+    {
+      nama: 'Abdul Car Rental',
+      lokasi: 'Kebayoran Baru',
+      bintang: '4',
+      rating: '8.7',
+      harga: '400000',
+      img_url: 'car_rental_1.jpeg',
+      deskripsi: 'Penyewaan kendaraan bermutu.',
+      kota: 'Jakarta'
+    },
+    {
+      nama: 'Dudung Car Rental',
+      lokasi: 'Senayan',
+      bintang: '3',
+      rating: '6.7',
+      harga: '200000',
+      img_url: 'car_rental_2.jpeg',
+      deskripsi: 'Penyewaan kendaraan terjangkau.',
+      kota: 'Jakarta'
+    },
+  ],
+  pesawat: [
+    {
+      nama: 'Air Asia',
+      lokasi: 'Halim Perdana Kusuma',
+      bintang: '4',
+      rating: '8.7',
+      harga: '3500000',
+      img_url: 'air_asia.jpg',
+      deskripsi: 'Surabaya --> Jakarta',
+      kota: 'Jakarta'
+    },
+    {
+      nama: 'Lion Air',
+      lokasi: 'Soekarno Hatta',
+      bintang: '3',
+      rating: '6.7',
+      harga: '1900000',
+      img_url: 'lion_air.jpg',
+      deskripsi: 'Surabaya --> Jakarta',
+      kota: 'Jakarta'
+    },
+  ],
   paket_wisata: [
     {
       nama: 'Jakarta Tour 3D2N',
