@@ -165,5 +165,27 @@ var data = {
       waktu_tiba: '07:00',
       durasi: "1 Jam"
     }
-  ]
+  ],
+  rental: [
+    {
+      nama: 'Abdul Car Rental',
+      lokasi: 'Kebayoran Baru',
+      bintang: '4',
+      rating: '8.7',
+      harga: '400000',
+      img_url: 'car_rental_1.jpeg',
+      deskripsi: 'Penyewaan kendaraan bermutu.',
+      kota: 'Jakarta'
+    },
+    {
+      nama: 'Dudung Car Rental',
+      lokasi: 'Senayan',
+      bintang: '3',
+      rating: '6.7',
+      harga: '200000',
+      img_url: 'car_rental_2.jpeg',
+      deskripsi: 'Penyewaan kendaraan terjangkau.',
+      kota: 'Jakarta'
+    },
+  ],
 }
