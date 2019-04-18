@@ -401,7 +401,30 @@
 						<div class="offers_grid">
 	
 							<!-- Offers Item -->
-	
+							<div class="offers_item rating_4">
+								<div class="row">
+									<div class="col-lg-2">
+										<div class="offers_image_container">
+											<img src="./images/lion_logo.png" />
+											<div>Lion</div>
+										</div>
+									</div>
+									<div class="col-lg-10">
+										<div>
+											<div>08:30</div>
+											<div>Jakarta</div>
+										</div>
+										<div>
+											<div>10:30</div>
+											<div>Denpasar</div>
+										</div>
+										<div></div>
+										<div></div>
+										<div></div>
+									</div>
+								</div>
+							</div>
+
 						</div>
 					</div>
 	
@@ -540,49 +563,49 @@
   $.map(data.paket_wisata, function( value, key ){
     offer_items += `
     <div class="offers_item rating_4">
-        <div class="row">
-          <div class="col-lg-1 temp_col"></div>
-          <div class="col-lg-3 col-1680-4">
-            <div class="offers_image_container">
-              <div class="offers_image_background" style="background-image:url(images/${value['img_url']})"></div>
-              <div class="offer_name"><a href="single_listing.html">${value['nama']}</a></div>
-            </div>
-          </div>
-          <div class="col-lg-8">
-            <div class="offers_content">
-              <div class="offers_price">Rp. ${moneyFormat(value['harga'])}<span>per orang</span></div>
-              <div class="rating_r rating_r_${value['bintang']} offers_rating" data-rating="4">
-                <i></i>
-                <i></i>
-                <i></i>
-                <i></i>
-                <i></i>
-              </div>
-              <p class="offers_text">
-                ${value['deskripsi']}
-              </p>
-              <div class="offers_icons">
-                <ul class="offers_icons_list">
-                  <li class="offers_icons_item"><img src="images/post.png" alt=""></li>
-                  <li class="offers_icons_item"><img src="images/compass.png" alt=""></li>
-                  <li class="offers_icons_item"><img src="images/bicycle.png" alt=""></li>
-                  <li class="offers_icons_item"><img src="images/sailboat.png" alt=""></li>
-                </ul>
-              </div>
-              <div class="button book_button"><a href="#">book</a></div>
-              <div class="offer_reviews">
-                <div class="offer_reviews_content">
-                  <div class="offer_reviews_title">very good</div>
-                </div>
-                <div class="offer_reviews_rating text-center">${value['rating']}</div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
+			<div class="row">
+				<div class="col-lg-1 temp_col"></div>
+				<div class="col-lg-3 col-1680-4">
+					<div class="offers_image_container">
+						<div class="offers_image_background" style="background-image:url(images/${value['img_url']})"></div>
+						<div class="offer_name"><a href="single_listing.html">${value['nama']}</a></div>
+					</div>
+				</div>
+				<div class="col-lg-8">
+					<div class="offers_content">
+						<div class="offers_price">Rp. ${moneyFormat(value['harga'])}<span>per orang</span></div>
+						<div class="rating_r rating_r_${value['bintang']} offers_rating" data-rating="4">
+							<i></i>
+							<i></i>
+							<i></i>
+							<i></i>
+							<i></i>
+						</div>
+						<p class="offers_text">
+							${value['deskripsi']}
+						</p>
+						<div class="offers_icons">
+							<ul class="offers_icons_list">
+								<li class="offers_icons_item"><img src="images/post.png" alt=""></li>
+								<li class="offers_icons_item"><img src="images/compass.png" alt=""></li>
+								<li class="offers_icons_item"><img src="images/bicycle.png" alt=""></li>
+								<li class="offers_icons_item"><img src="images/sailboat.png" alt=""></li>
+							</ul>
+						</div>
+						<div class="button book_button"><a href="#">book</a></div>
+						<div class="offer_reviews">
+							<div class="offer_reviews_content">
+								<div class="offer_reviews_title">very good</div>
+							</div>
+							<div class="offer_reviews_rating text-center">${value['rating']}</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
     `
 
-    $('.offers_grid').html(offer_items)
+    // $('.offers_grid').html(offer_items)
   })
 
   function moneyFormat (value){
