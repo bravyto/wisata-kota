@@ -1,16 +1,103 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<title>Offers</title>
-<meta charset="utf-8">
-<meta http-equiv="X-UA-Compatible" content="IE=edge">
-<meta name="description" content="wisata-kota Project">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<link rel="stylesheet" type="text/css" href="styles/bootstrap4/bootstrap.min.css">
-<link href="plugins/font-awesome-4.7.0/css/font-awesome.min.css" rel="stylesheet" type="text/css">
-<link rel="stylesheet" type="text/css" href="styles/offers_styles.css">
-<link rel="stylesheet" type="text/css" href="styles/offers_responsive.css">
-<link rel="stylesheet" type="text/css" href="styles/auto-complete.css">
+	<title>Offers</title>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="description" content="wisata-kota Project">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="stylesheet" type="text/css" href="styles/bootstrap4/bootstrap.min.css">
+	<link href="plugins/font-awesome-4.7.0/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+	<link rel="stylesheet" type="text/css" href="styles/offers_styles.css">
+	<link rel="stylesheet" type="text/css" href="styles/offers_responsive.css">
+	<link rel="stylesheet" type="text/css" href="styles/auto-complete.css">
+
+	<style>
+		.offers_flight {
+			display: flex;
+			min-height: 100px;
+			flex-direction: row;
+			align-items: center;
+			border-radius: 4px;
+			border: .5px solid #dadada;
+			padding: 8 cpx;
+		}
+		.offers_flight_logo {
+			width: 10%;
+		}
+		.offers_flight_image {
+			padding: 8px 24px;
+			text-align: center;
+			font-weight: bold;
+			font-size: 18px;
+		}
+		.offers_flight_image img {
+			width: 50px;
+		}
+		.offers_flight_content {
+			display: flex;
+			flex-direction: row;
+			padding: 8px;
+			width: 90%;
+		}
+		.offers_flight_airport {
+			width: 25%;
+		}
+
+		.offers_flight_airport div:nth-child(1) {
+			font-size: 20px;
+			font-weight: bold;
+			color: #434343;
+		}
+
+		.offers_flight_airport div:nth-child(2) {
+			color: #8F8F8F;
+			font-size: 18px;
+		}
+
+		.offers_flight_airport div:nth-child(3) {
+			color: #8F8F8F;
+			font-size: 12px;
+		}
+
+		.offers_flight_sparator {
+			padding-top: 4px;
+			width: 5%;
+		}
+
+		.offers_flight_duration {
+			width: 10%;
+			font-size: 12px;
+			line-height: 16px;
+		}
+
+		.offers_flight_duration span {
+			font-weight: bold;
+			font-size: 16px;
+		}
+
+		.offers_flight_price {
+			width: 20%;
+			font-size: 24px;
+			font-weight: bold;
+			color: #eda84a;
+			padding-right: 16px;
+			display: flex;
+			align-items: center;
+			justify-content: flex-end;
+		}
+
+		.offers_flihgt_book {
+			width: 15%;
+			display: flex;
+			justify-content: center;
+			align-items: center;
+		}
+
+		.book_button {
+			margin-top: 0;
+		}
+	</style>
 </head>
 
 <body>
@@ -407,25 +494,36 @@
 
 							<!-- Offers Item -->
 							<div class="offers_item rating_4">
-								<div class="row">
-									<div class="col-lg-2">
-										<div class="offers_image_container">
+								<div class="row offers_flight">
+									<div class="offers_flight_logo">
+										<div class="offers_flight_image">
 											<img src="./images/lion_logo.png" />
 											<div>Lion</div>
 										</div>
 									</div>
-									<div class="col-lg-10">
-										<div>
+									<div class="offers_flight_content">
+										<div class="offers_flight_airport">
 											<div>08:30</div>
 											<div>Jakarta</div>
+											<div>Soekarnao Hatta International Airport</div>
 										</div>
-										<div>
+										<div class="offers_flight_sparator">
+											- - -
+										</div>
+										<div class="offers_flight_airport">
 											<div>10:30</div>
 											<div>Denpasar</div>
+											<div>Ngurah Rai International Airport</div>
 										</div>
-										<div></div>
-										<div></div>
-										<div></div>
+
+										<div class="offers_flight_duration">
+											Durasi Penerbangan: <br> <span>2 Jam</span>
+										</div>
+
+										<div class="offers_flight_price">Rp. 240.000</div>
+										<div class="offers_flihgt_book">
+												<div class="button book_button"><a href="#">book</a></div>
+										</div>
 									</div>
 								</div>
 							</div>
@@ -565,52 +663,45 @@
 <script>
   var offer_items = ""
 
-  $.map(data.paket_wisata, function( value, key ){
+  $.map(data.flight, function( value, key ){
     offer_items += `
     <div class="offers_item rating_4">
-			<div class="row">
-				<div class="col-lg-1 temp_col"></div>
-				<div class="col-lg-3 col-1680-4">
-					<div class="offers_image_container">
-						<div class="offers_image_background" style="background-image:url(images/${value['img_url']})"></div>
-						<div class="offer_name"><a href="single_listing.html">${value['nama']}</a></div>
+			<div class="row offers_flight">
+				<div class="offers_flight_logo">
+					<div class="offers_flight_image">
+						<img src='images/${value['logo']}' />
+						<div>Lion</div>
 					</div>
 				</div>
-				<div class="col-lg-8">
-					<div class="offers_content">
-						<div class="offers_price">Rp. ${moneyFormat(value['harga'])}<span>per orang</span></div>
-						<div class="rating_r rating_r_${value['bintang']} offers_rating" data-rating="4">
-							<i></i>
-							<i></i>
-							<i></i>
-							<i></i>
-							<i></i>
-						</div>
-						<p class="offers_text">
-							${value['deskripsi']}
-						</p>
-						<div class="offers_icons">
-							<ul class="offers_icons_list">
-								<li class="offers_icons_item"><img src="images/post.png" alt=""></li>
-								<li class="offers_icons_item"><img src="images/compass.png" alt=""></li>
-								<li class="offers_icons_item"><img src="images/bicycle.png" alt=""></li>
-								<li class="offers_icons_item"><img src="images/sailboat.png" alt=""></li>
-							</ul>
-						</div>
-						<div class="button book_button"><a href="#">book</a></div>
-						<div class="offer_reviews">
-							<div class="offer_reviews_content">
-								<div class="offer_reviews_title">very good</div>
-							</div>
-							<div class="offer_reviews_rating text-center">${value['rating']}</div>
-						</div>
+				<div class="offers_flight_content">
+					<div class="offers_flight_airport">
+						<div>${value['waktu_berangkat']}</div>
+						<div>${value['kota_berangkat']}</div>
+						<div>${value['bandara_berangkat']}</div>
+					</div>
+					<div class="offers_flight_sparator">
+						- - -
+					</div>
+					<div class="offers_flight_airport">
+						<div>${value['waktu_tiba']}</div>
+						<div>${value['kota_tiba']}</div>
+						<div>${value['bandara_tiba']}</div>
+					</div>
+
+					<div class="offers_flight_duration">
+						Durasi Penerbangan: <br> <span>${value['durasi']}</span>
+					</div>
+
+					<div class="offers_flight_price">Rp. ${moneyFormat(value['harga'])}</div>
+					<div class="offers_flihgt_book">
+							<div class="button book_button"><a href="#">book</a></div>
 					</div>
 				</div>
 			</div>
 		</div>
     `
 
-    // $('.offers_grid').html(offer_items)
+    $('.offers_grid').html(offer_items)
   })
 
   function moneyFormat (value){
