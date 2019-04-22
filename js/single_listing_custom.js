@@ -277,39 +277,84 @@ $(document).ready(function()
 
 	function initGoogleMap()
 	{
-		var myLatlng = new google.maps.LatLng(-7.2755979, 112.5715977);
-    	var mapOptions =
-    	{
-    		center: myLatlng,
-	       	zoom: 11,
-			mapTypeId: google.maps.MapTypeId.ROADMAP,
-			draggable: true,
-			scrollwheel: false,
-			zoomControl: true,
-			zoomControlOptions:
-			{
-				position: google.maps.ControlPosition.RIGHT_CENTER
-			},
-			mapTypeControl: false,
-			scaleControl: false,
-			streetViewControl: false,
-			rotateControl: false,
-			fullscreenControl: true,
-			styles:[]
-    	}
-
-    	// Initialize a map with options
-    	map = new google.maps.Map(document.getElementById('map'), mapOptions);
-
-		// Re-center map after window resize
-		google.maps.event.addDomListener(window, 'resize', function()
-		{
-			setTimeout(function()
-			{
-				google.maps.event.trigger(map, "resize");
-				map.setCenter(myLatlng);
-			}, 1400);
-		});
+		// var myLatlng = new google.maps.LatLng(-6.2295712, 106.759478);
+		// // var myLatlngh = new google.maps.LatLng(-7.2755979, 112.5715977);
+		// // var myLatlng3 = new google.maps.LatLng(-8.6725072, 115.1542333);
+  	// var mapOptions =
+    // 	{
+    // 		center: myLatlng,
+	  //      	zoom: 12,
+		// 	mapTypeId: google.maps.MapTypeId.ROADMAP,
+		// 	draggable: true,
+		// 	scrollwheel: false,
+		// 	zoomControl: true,
+		// 	zoomControlOptions:
+		// 	{
+		// 		position: google.maps.ControlPosition.RIGHT_CENTER
+		// 	},
+		// 	mapTypeControl: false,
+		// 	scaleControl: false,
+		// 	streetViewControl: false,
+		// 	rotateControl: false,
+		// 	fullscreenControl: true,
+		// 	styles:[]
+    // 	}
+		// // var mapOptionsh =
+    // // 	{
+    // // 		center: myLatlngh,
+	  // //      	zoom: 11,
+		// // 	mapTypeId: google.maps.MapTypeId.ROADMAP,
+		// // 	draggable: true,
+		// // 	scrollwheel: false,
+		// // 	zoomControl: true,
+		// // 	zoomControlOptions:
+		// // 	{
+		// // 		position: google.maps.ControlPosition.RIGHT_CENTER
+		// // 	},
+		// // 	mapTypeControl: false,
+		// // 	scaleControl: false,
+		// // 	streetViewControl: false,
+		// // 	rotateControl: false,
+		// // 	fullscreenControl: true,
+		// // 	styles:[]
+    // // 	}
+		// // var mapOptions3 =
+    // // 	{
+    // // 		center: myLatlng3,
+	  // //      	zoom: 12,
+		// // 	mapTypeId: google.maps.MapTypeId.ROADMAP,
+		// // 	draggable: true,
+		// // 	scrollwheel: false,
+		// // 	zoomControl: true,
+		// // 	zoomControlOptions:
+		// // 	{
+		// // 		position: google.maps.ControlPosition.RIGHT_CENTER
+		// // 	},
+		// // 	mapTypeControl: false,
+		// // 	scaleControl: false,
+		// // 	streetViewControl: false,
+		// // 	rotateControl: false,
+		// // 	fullscreenControl: true,
+		// // 	styles:[]
+    // // 	}
+    // 	// Initialize a map with options
+  	// map = new google.maps.Map(document.getElementById('map'), mapOptions);
+  	// // maph = new google.maps.Map(document.getElementById('maph'), mapOptionsh);
+  	// // var map3 = new google.maps.Map(document.getElementById('map3'), mapOptions3);
+		//
+		// // Re-center map after window resize
+		// google.maps.event.addDomListener(window, 'resize', function()
+		// {
+		// 	setTimeout(function()
+		// 	{
+		// 		google.maps.event.trigger(map, "resize");
+		// 		// google.maps.event.trigger(maph, "resize");
+		// 		// google.maps.event.trigger(map3, "resize");
+		// 		map.setCenter(myLatlng);
+		// 		// map2.setCenter(myLatlng2);
+		// 		// map3.setCenter(myLatlng3);
+		// 	}, 1400);
+		// });
 	}
 
 	/*
