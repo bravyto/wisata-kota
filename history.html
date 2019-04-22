@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<title>Pembayaran</title>
+<title>History</title>
 <meta charset="utf-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="description" content="wisata-kota Project">
@@ -170,7 +170,7 @@
 	<div class="home" style="height:380px">
 		<div class="home_background parallax-window" data-parallax="scroll" data-image-src="images/about_background.jpg"></div>
 		<div class="home_content">
-			<div class="home_title">pembayaran</div>
+			<div class="home_title">Histori</div>
 		</div>
 	</div>
 
@@ -179,68 +179,24 @@
 	<div class="intro">
 		<div class="container">
 			<div class="row">
-				<div class="col-lg-6">
+        <div class="col-lg-3">
+          <div class="intro_content" style="font-size:32px; font-weight: bold; color: #2d2c2c; text-align: right">
+            Histori Pembayaran
+          </div>
+        </div>
+				<div class="col-lg-9">
 					<div>
 						<table>
 							<thead>
 								<td colspan="2">Jenis Produk</td>
-								<td>Harga</td>
+                <td>Harga</td>
+                <td>Tanggal</td>
+                <td>Status</td>
 							</thead>
 							<tbody id="item-list">
-								<tr>
-									<td class="item-title" colspan="3">Hotel</td>
-								</tr>
-								<tr>
-									<td>Century Park Hotel</td>
-									<td>2 Pax</td>
-									<td>1375000</td>
-								</tr>
+								
 							</tbody>
 						</table>
-					</div>
-				</div>
-				<div class="col-lg-6">
-						<div class="intro_content">
-							<div class="payment-type">
-								<div class="payment-item">
-									<div>Kartu Kredit</div>
-									<div>Pembayaran menggunakan kartu kredit</div>
-									<div><img src="images/cc.png" style="height:40px; padding-top:8px" /></div>
-								</div>
-
-								<div class="payment-item">
-									<div>Transfer Rekening Bank</div>
-									<div>Pembayaran melalui rekening <b>No. Rek : 88190000291</b></div>
-									<div>
-											<img src="images/bni.png" style="height:25px; padding-top:8px; margin-right: 8px" />
-											<img src="images/bri.png" style="height:25px; padding-top:8px; margin-right: 8px" />
-											<img src="images/mandiri.png" style="height:25px; padding-top:8px; margin-right: 8px" />
-											<img src="images/bca.png" style="height:25px; padding-top:8px; margin-right: 8px" />
-									</div>
-								</div>
-
-								<div class="payment-item">
-									<div>Gerai Terdekat</div>
-									<div>Pembayaran menggunakan kartu kredit</div>
-									<div>
-											<img src="images/indomaret.png" style="height:25px; padding-top:8px; margin-right: 8px" />
-											<img src="images/alfamart.png" style="height:25px; padding-top:8px; margin-right: 8px" />
-									</div>
-								</div>
-
-								<div class="payment-item">
-									<div>E-Wallet</div>
-									<div>Pembayaran menggunakan e-wallet</div>
-									<div>
-											<img src="images/gopay.jpg" style="height:25px; padding-top:8px; margin-right: 8px" />
-											<img src="images/ovo.png" style="height:25px; padding-top:8px; margin-right: 8px" />
-											<img src="images/dana.png" style="height:25px; padding-top:8px; margin-right: 8px" />
-									</div>
-									</div>
-							</div>
-							</label>
-							<div class="button pay_button" style="margin-top:16px"><div class="button_bcg"></div><a href="#">Bayar Sekarang</a>
-						</div>
 					</div>
 				</div>
 			</div>
@@ -343,10 +299,10 @@
 <script src="plugins/easing/easing.js"></script>
 <script src="plugins/parallax-js-master/parallax.min.js"></script>
 <script src="js/about_custom.js"></script>
-<script src="js/moment.js"></script>
 
 <script>
-	var cart = JSON.parse(localStorage.getItem("cart"))
+  var transaction_history = JSON.parse(localStorage.getItem("transaction_history"))
+  console.log(transaction_history)
 	var itemList = ""
 
 	$('.payment-item').click(function(){
@@ -354,44 +310,32 @@
 		$(this).addClass('active')
 	})
 	
-	$.map(cart, function( value, key ){
+	$.map(transaction_history, function( value, key ){
 		console.log(value)
 		itemList += `
 			<tr>
-				<td class="item-title" colspan="3">${value['tipe']}</td>
+				<td class="item-title" colspan="4">${value['data']['tipe']}</td>
 			</tr>
 			<tr>
 				<td>
-					<div>${value['nama']}</div>
-					<div class="item-place">${value['kota']} - ${value['lokasi']} </div>
-					<div class="item-date">${value['detail_order']['checkIn']} ${ typeof value['detail_order']['checkOut'] == 'undefined' ? '' : '  -  ' + value['detail_order']['checkOut'] } </div>
+					<div>${value['data']['nama']}</div>
+					<div class="item-place">${value['data']['kota']} - ${value['data']['lokasi']} </div>
+					<div class="item-date">${value['data']['detail_order']['checkIn']} ${ typeof value['data']['detail_order']['checkOut'] == 'undefined' ? '' : '  -  ' + value['data']['detail_order']['checkOut'] } </div>
 				</td>
-				<td><b>${value['detail_order']['qty']} Pax</b></td>
-				<td>Rp. ${moneyFormat(value['harga'] * value['detail_order']['qty'])}</td>
+				<td><b>${value['data']['detail_order']['qty']} Pax</b></td>
+        <td>Rp. ${moneyFormat(value['data']['harga'] * value['data']['detail_order']['qty'])}</td>
+        <td>
+          ${value['tanggal']}
+        </td>
+        <td>
+          <div style=${value['status'] == 'Pending' ? 'color:#ff8e00' : 'color:#c50c0c' }>
+            ${value['status']}
+          </div>
+        </td>
 			</tr>
 		`
 
 		$('#item-list').html(itemList)
-	})
-
-	$('.pay_button').click(function(){
-		var transaction_history = JSON.parse(localStorage.getItem("transaction_history"))
-		var now = new Date()
-
-		var newHistory = {
-			tanggal: moment(now).format('DD MMM YYYY'),
-			status: 'Pending',
-			data: cart[0]
-		}
-
-		var new_date = moment(now).add(1, 'days').format("DD MMM YYYY, h:mm");
-
-		transaction_history.push(newHistory)
-
-		localStorage.setItem("transaction_history", JSON.stringify(transaction_history));
-		alert("Terimakasih atas pesanan anda melalui wisata-kota \nHarap lakukan pembayaran sebelum " + new_date)
-
-		window.location.href = "history.html";
 	})
 
 	function moneyFormat (value){

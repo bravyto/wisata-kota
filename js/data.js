@@ -4,7 +4,7 @@ var data = {
       nama: 'User',
       noTlp: '0812342324',
       email: 'user@gmail.com',
-      password: 'user'
+      password: 'user',
     },
     {
       nama: 'Wisata Kota',
@@ -202,5 +202,6 @@ var data = {
       kota: 'Jakarta'
     },
   ],
-  cart: []
+  cart: [],
+  transaction_history: [],
 }

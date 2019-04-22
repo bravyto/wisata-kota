@@ -239,10 +239,6 @@
 											<input type="date" class="check_in search_input" placeholder="YYYY-MM-DD">
 										</div>
 										<div class="search_item">
-											<div>check out</div>
-											<input type="date" class="check_out search_input" placeholder="YYYY-MM-DD">
-										</div>
-										<div class="search_item">
 											<div>adults</div>
 											<select name="adults" id="adults_1" class="dropdown_item_select search_input">
 												<option>1</option>
@@ -276,10 +272,6 @@
 											<input type="date" class="check_in search_input" placeholder="YYYY-MM-DD">
 										</div>
 										<div class="search_item">
-											<div>check out</div>
-											<input type="date" class="check_out search_input" placeholder="YYYY-MM-DD">
-										</div>
-										<div class="search_item">
 											<div>adults</div>
 											<select name="adults" id="adults_1" class="dropdown_item_select search_input">
 												<option>1</option>
@@ -311,10 +303,6 @@
 										<div class="search_item">
 											<div>check in</div>
 											<input type="date" class="check_in search_input" placeholder="YYYY-MM-DD">
-										</div>
-										<div class="search_item">
-											<div>check out</div>
-											<input type="date" class="check_out search_input" placeholder="YYYY-MM-DD">
 										</div>
 										<div class="search_item">
 											<div>adults</div>
@@ -615,7 +603,7 @@
                   <li class="offers_icons_item"><img src="images/sailboat.png" alt=""></li>
                 </ul>
               </div>
-              <div class="button book_button"><a href="#">book</a></div>
+              <div class="button book_button" data-id=${key}><a href="#">book</a></div>
               <div class="offer_reviews">
                 <div class="offer_reviews_content">
                   <div class="offer_reviews_title">very good</div>
@@ -629,7 +617,24 @@
     `
 
     $('.offers_grid').html(offer_items)
-  })
+	})
+	
+	$('.book_button').click(function(){
+		event.preventDefault();
+		var detail_order = JSON.parse(localStorage.getItem("detail_order"))
+		// var cart = JSON.parse(localStorage.getItem("cart"))
+		var cart = []
+		var id = $(this).attr('data-id')
+		console.log(cart)
+
+		var detail = data.aktivitas[id]
+		detail.tipe = "Aktivitas"
+		detail.detail_order = detail_order
+
+		cart.push(detail)
+		localStorage.setItem("cart", JSON.stringify(cart))
+		window.location.href = 'checkout.html'
+	})
 
   function moneyFormat (value){
     return value.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ".");

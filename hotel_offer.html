@@ -239,10 +239,6 @@
 										<input type="date" class="check_in search_input" placeholder="YYYY-MM-DD">
 									</div>
 									<div class="search_item">
-										<div>check out</div>
-										<input type="date" class="check_out search_input" placeholder="YYYY-MM-DD">
-									</div>
-									<div class="search_item">
 										<div>adults</div>
 										<select name="adults" id="adults_1" class="dropdown_item_select search_input">
 											<option>1</option>
@@ -276,10 +272,6 @@
 										<input type="date" class="check_in search_input" placeholder="YYYY-MM-DD">
 									</div>
 									<div class="search_item">
-										<div>check out</div>
-										<input type="date" class="check_out search_input" placeholder="YYYY-MM-DD">
-									</div>
-									<div class="search_item">
 										<div>adults</div>
 										<select name="adults" id="adults_1" class="dropdown_item_select search_input">
 											<option>1</option>
@@ -311,10 +303,6 @@
 									<div class="search_item">
 										<div>check in</div>
 										<input type="date" class="check_in search_input" placeholder="YYYY-MM-DD">
-									</div>
-									<div class="search_item">
-										<div>check out</div>
-										<input type="date" class="check_out search_input" placeholder="YYYY-MM-DD">
 									</div>
 									<div class="search_item">
 										<div>adults</div>
@@ -644,7 +632,7 @@
 	
 	$('.book_button').click(function(){
 		event.preventDefault();
-
+		var detail_order = JSON.parse(localStorage.getItem("detail_order"))
 		// var cart = JSON.parse(localStorage.getItem("cart"))
 		var cart = []
 		var id = $(this).attr('data-id')
@@ -652,10 +640,11 @@
 
 		var detail = data.hotel[id]
 		detail.tipe = "Hotel"
+		detail.detail_order = detail_order
 
 		cart.push(detail)
 		localStorage.setItem("cart", JSON.stringify(cart))
-
+		window.location.href = 'checkout.html'
 	})
 
   function moneyFormat (value){
