@@ -540,7 +540,10 @@
 									<i></i>
 								</div>
 								<p class="cta_text">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam eu convallis tortor. Suspendisse potenti. In faucibus massa arcu, vitae cursus mi hendrerit nec. Proin bibendum, augue faucibus tincidunt ultrices, tortor augue gravida lectus, et efficitur enim justo vel ligula.</p>
-								<div class="button cta_button"><div class="button_bcg"></div><a href="#">book now</a></div>
+								<div class="button cta_button" data-id=1>
+									<div class="button_bcg"></div>
+									<a href="#">book now</a>
+								</div>
 							</div>
 
 							<!-- CTA Slider Item -->
@@ -554,11 +557,14 @@
 									<i></i>
 								</div>
 								<p class="cta_text">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam eu convallis tortor. Suspendisse potenti. In faucibus massa arcu, vitae cursus mi hendrerit nec. Proin bibendum, augue faucibus tincidunt ultrices, tortor augue gravida lectus, et efficitur enim justo vel ligula.</p>
-								<div class="button cta_button"><div class="button_bcg"></div><a href="#">book now</a></div>
+								<div class="button cta_button" data-id=2>
+									<div class="button_bcg"></div>
+									<a href="#">book now</a>
+								</div>
 							</div>
 
 							<!-- CTA Slider Item -->
-							<div class="owl-item cta_item text-center">
+							<!-- <div class="owl-item cta_item text-center">
 								<div class="cta_title">maldives deluxe package</div>
 								<div class="rating_r rating_r_4">
 									<i></i>
@@ -569,7 +575,7 @@
 								</div>
 								<p class="cta_text">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam eu convallis tortor. Suspendisse potenti. In faucibus massa arcu, vitae cursus mi hendrerit nec. Proin bibendum, augue faucibus tincidunt ultrices, tortor augue gravida lectus, et efficitur enim justo vel ligula.</p>
 								<div class="button cta_button"><div class="button_bcg"></div><a href="#">book now</a></div>
-							</div>
+							</div> -->
 
 						</div>
 
@@ -1055,6 +1061,10 @@
 <script src="js/moment.js"></script>
 
 <script>
+	function moneyFormat (value){
+		return value.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ".");
+	}
+
 	$('.search_button').click(function() {
 		event.preventDefault;
 		var checkIn = $(this).siblings('.search_item').children('.check_in').val()
@@ -1074,6 +1084,50 @@
 		}
 
 		localStorage.setItem("detail_order", JSON.stringify(detail_order));
+	});
+
+	var offer_items = ""
+
+	$.map(data.promo, function( value, key ){
+		offer_items += `
+		<div class="owl-item cta_item text-center">
+			<div class="cta_image_background" style="background-image:url(images/${value['img_url']})"></div>
+			<div class="cta_title">${value['nama']}</div>
+			<div class="cta_price">Rp. ${moneyFormat(value['harga'])}</div>
+			<div class="cta_old_price">Rp. ${moneyFormat(value['harga_awal'])}</div>
+			<div class="rating_r rating_r_${value['bintang']}">
+				<i></i>
+				<i></i>
+				<i></i>
+				<i></i>
+				<i></i>
+			</div>
+			<p class="cta_text">${value['deskripsi']}</p>
+			<div class="button cta_button" data-id=${key}>
+				<div class="button_bcg"></div>
+				<a href="#">book now</a>
+			</div>
+		</div>
+		`
+
+		$('.cta_slider').html(offer_items)
+	})
+
+	$('.cta_button').click(function(){
+		event.preventDefault();
+		var detail_order = JSON.parse(localStorage.getItem("detail_order"))
+		// var cart = JSON.parse(localStorage.getItem("cart"))
+		var cart = []
+		var id = $(this).attr('data-id')
+		console.log(cart)
+
+		var detail = data.promo[id]
+		detail.tipe = "Promo"
+		detail.detail_order = detail_order
+
+		cart.push(detail)
+		localStorage.setItem("cart", JSON.stringify(cart))
+		window.location.href = 'checkout.html'
 	})
 
 	var popular_activities = ''

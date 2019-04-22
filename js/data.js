@@ -105,6 +105,34 @@ var data = {
       kota: 'Jogjakarta'
     }
   ],
+  promo: [
+    {
+      nama: 'Dunia Fantasi',
+      lokasi: 'Ancol',
+      bintang: '4',
+      rating: '8.2',
+      harga_awal: '200000',
+      harga: '150000',
+      img_url: 'dufan.jpg',
+      jam_buka: '10:00',
+      jam_tutup: '21:00',
+      deskripsi: 'Dunia Fantasi atau disebut juga Dufan yang diresmikan pada 29 Agustus 1985 adalah tempat hiburan yang terletak di kompleks Taman Impian Jaya Ancol, Jakarta Utara, Indonesia.',
+      kota: 'Jakarta'
+    },
+    {
+      nama: 'Ragunan Zoo',
+      lokasi: 'Pasar Minggu',
+      bintang: '5',
+      rating: '8.6',
+      harga_awal: '7500',
+      harga: '5000',
+      img_url: 'ragunan.jpg',
+      jam_buka: '06:00',
+      jam_tutup: '17:00',
+      deskripsi: "Kebun Binatang Ragunan adalah sebuah kebun binatang yang terletak di daerah Ragunan, Pasar Minggu, Jakarta Selatan, Indonesia.",
+      kota: 'Jakarta'
+    }
+  ],
   hotel: [
     {
       nama: 'Century Park Hotel',
