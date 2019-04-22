@@ -77,8 +77,32 @@ var data = {
       img_url: 'waterboom.jpg',
       jam_buka: '10:00',
       jam_tutup: '18:00',
-      deskripsi: "What better way to cool down on a hot day than playing with water at Waterbom Jakarta? It is the first water park in Indonesia with international standard facilities, and there are lots of outdoor activities to choose from. Whether you want to chill on a tube on the pools or go 70 km/hour on the Speed Slide, there is something for everyone. Don't worry, the water filter system runs 24 hours to ensure everything is clean.",
+      deskripsi: "What better way to cool down on a hot day than playing with water at Waterbom Jakarta? It is the first water park in Indonesia with international standard facilities, and there are lots of outdoor activities to choose from. Whether you want to chill on a tube on the pools or go 70 km/hour on the Speed Slide, there is something for everyone.",
       kota: 'Jakarta'
+    },
+    {
+      nama: 'Bali Zoo',
+      lokasi: 'Ubud',
+      bintang: '5',
+      rating: '8.6',
+      harga: '94000',
+      img_url: 'orangutan.jpg',
+      jam_buka: '10:00',
+      jam_tutup: '18:00',
+      deskripsi: "Looking for a fun activity to do that's suitable for the whole family? Why not visit Bali Zoo? It has a wide collection of animals, from orangutan, to tigers, to elephants and many more!",
+      kota: 'Denpasar'
+    },
+    {
+      nama: 'Borobudur',
+      lokasi: 'Magelang',
+      bintang: '5',
+      rating: '8.6',
+      harga: '40000',
+      img_url: 'borobudur.jpg',
+      jam_buka: '8:00',
+      jam_tutup: '21:00',
+      deskripsi: "Often regarded as one of the most important Buddhist sites in the world, the Borobudur Temple is a UNESCO World Heritage Site. A must-visit if you're around Central Java, this 9th century temple was built in line with the Buddhist belief of the Universe. The main temple has a total of 72 stupas, each containing a statue of the Buddha.",
+      kota: 'Jogjakarta'
     }
   ],
   hotel: [
