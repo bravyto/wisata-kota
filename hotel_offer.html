@@ -581,12 +581,15 @@
 <script src="js/custom.js"></script>
 
 <script src="js/data.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/lodash@4.17.11/lodash.min.js"></script>
+
 <script>
   var offer_items = ""
 
   $.map(data.hotel, function( value, key ){
+		console.log(key)
     offer_items += `
-    <div class="offers_item rating_4">
+   	 	<div class="offers_item rating_4">
         <div class="row">
           <div class="col-lg-1 temp_col"></div>
           <div class="col-lg-3 col-1680-4">
@@ -615,8 +618,15 @@
                   <li class="offers_icons_item"><img src="images/bicycle.png" alt=""></li>
                   <li class="offers_icons_item"><img src="images/sailboat.png" alt=""></li>
                 </ul>
-              </div>
-              <div class="button book_button"><a href="#">book</a></div>
+							</div>
+							<div>
+								<div class="qty-btn> 
+										<div> - </div>
+										<div class="qty">1</div>
+										<div> + </div>
+								</div>
+								<div class="button book_button" data-id=${key}><a href="#">book</a></div>
+							</div>
               <div class="offer_reviews">
                 <div class="offer_reviews_content">
                   <div class="offer_reviews_title">very good</div>
@@ -630,7 +640,23 @@
     `
 
     $('.offers_grid').html(offer_items)
-  })
+	})
+	
+	$('.book_button').click(function(){
+		event.preventDefault();
+
+		// var cart = JSON.parse(localStorage.getItem("cart"))
+		var cart = []
+		var id = $(this).attr('data-id')
+		console.log(cart)
+
+		var detail = data.hotel[id]
+		detail.tipe = "Hotel"
+
+		cart.push(detail)
+		localStorage.setItem("cart", JSON.stringify(cart))
+
+	})
 
   function moneyFormat (value){
     return value.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ".");

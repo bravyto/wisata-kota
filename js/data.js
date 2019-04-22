@@ -1,4 +1,18 @@
 var data = {
+  users : [
+    {
+      nama: 'User',
+      noTlp: '0812342324',
+      email: 'user@gmail.com',
+      password: 'user'
+    },
+    {
+      nama: 'Wisata Kota',
+      noTlp: '021299293',
+      email: 'wisatakota@gmail.com',
+      password: 'password'
+    },
+  ],
   kota : [
     {
       nama: 'Jakarta',
@@ -188,4 +202,5 @@ var data = {
       kota: 'Jakarta'
     },
   ],
+  cart: []
 }

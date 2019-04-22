@@ -53,18 +53,25 @@
 
   </body>
 
+  <script src="js/jquery-3.2.1.min.js"></script>
   <script>
+    var users = JSON.parse(localStorage.getItem("users"))
+
     var a = document.getElementById("form__login");
     a.addEventListener("submit", function(event) {
       event.preventDefault();
       var email = document.getElementById("login__email").value;
       var password = document.getElementById("login__password").value;
-      if ( email == "wisatakota@gmail.com" && password == "password") {
-        window.location.assign("/index.html");
-        return false;
-      } else {
-        document.getElementById("wrong_credential").innerHTML = "Wrong email or password";
-        return false;
-      }
+
+      $.each(users, function(index,user) {
+        console.log(user)
+        if ( email == user['email'] && password == user['password']) {
+          window.location.href = "index.html";
+          return false;
+        } else {
+          document.getElementById("wrong_credential").innerHTML = "Wrong email or password";
+        }
+      });
+      
     })
   </script>
