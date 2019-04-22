@@ -172,7 +172,7 @@ var data = {
       logo: 'lion_logo.png',
       harga: 1100000,
       kota_berangkat: 'Jakarta',
-      bandara_berangkat: 'Soekarnao Hatta International Airport',
+      bandara_berangkat: 'Soekarno Hatta International Airport',
       waktu_berangkat: '06:00',
       kota_tiba: 'Denpasar',
       bandara_tiba: 'Ngurah Rai International Airport',
