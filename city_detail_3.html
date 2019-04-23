@@ -828,6 +828,25 @@ Copyright &copy;<script>document.write(new Date().getFullYear());</script> All r
 			map.setCenter(myLatlng);
 		}, 1400);
 	});
+
+
+		var user = JSON.parse(localStorage.getItem("logged_user"))
+
+		if (user == null) {
+			var user_panel = `
+				<div class="user_box_login user_box_link"><a href="login.html">login</a></div>
+				<div class="user_box_register user_box_link"><a href="register.html">register</a></div>
+			`
+		} else {
+			var user_panel = `
+				<div class="user_box_login user_box_link"><a href="#">Hai ${user['nama']}</a></div>
+				<div class="user_box_register user_box_link"><a href="logout.html">logout</a></div>
+			`
+		}
+
+		$('.user_box').html(user_panel)
+
+		console.log(user)
 </script>
 </body>
 
