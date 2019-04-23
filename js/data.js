@@ -194,6 +194,8 @@ var data = {
       harga: 500000,
       tanggal_berangkat: '05-05-2019',
       tanggal_pulang: '08-05-2019',
+      lokasi: 'Pulau Seribu',
+      kota: 'Jakarta',
       img_url: 'pulau_pramuka.jpg',
       deskripsi: 'Pulau Pramuka merupakan salah satu pulau yang berada pada gugusan Kepulauan Seribu. Pulau ini merupakan pusat administrasi dan pemerintahan Kabupaten Administratif Kepulauan Seribu. Pulau Pramuka termasuk ke dalam Kelurahan Pulau Panggang.',
       itenerary:[
@@ -229,7 +231,37 @@ var data = {
       kota_tiba: 'Denpasar',
       bandara_tiba: 'Ngurah Rai International Airport',
       waktu_tiba: '07:00',
-      durasi: "1 Jam"
+      durasi: "1 Jam",
+      lokasi: 'Jakarta',
+      kota: 'Denpasar'
+    },
+    {
+      nama: 'Lion',
+      logo: 'lion_logo.png',
+      harga: 1200000,
+      kota_berangkat: 'Jakarta',
+      bandara_berangkat: 'Soekarno Hatta International Airport',
+      waktu_berangkat: '09:00',
+      kota_tiba: 'Denpasar',
+      bandara_tiba: 'Ngurah Rai International Airport',
+      waktu_tiba: '10:00',
+      durasi: "1 Jam",
+      lokasi: 'Jakarta',
+      kota: 'Denpasar'
+    },
+    {
+      nama: 'Lion',
+      logo: 'lion_logo.png',
+      harga: 105000,
+      kota_berangkat: 'Jakarta',
+      bandara_berangkat: 'Soekarno Hatta International Airport',
+      waktu_berangkat: '13:00',
+      kota_tiba: 'Denpasar',
+      bandara_tiba: 'Ngurah Rai International Airport',
+      waktu_tiba: '14:00',
+      durasi: "1 Jam",
+      lokasi: 'Jakarta',
+      kota: 'Denpasar'
     }
   ],
   rental: [
