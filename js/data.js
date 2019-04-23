@@ -218,6 +218,38 @@ var data = {
           img_url: ''
         }
       ]
+    },
+    {
+      nama: 'Bromo Adventure 3D2N',
+      durasi: '3D2N',
+      bintang: '5',
+      rating: '9.8',
+      harga: 780000,
+      tanggal_berangkat: '05-05-2019',
+      tanggal_pulang: '08-05-2019',
+      lokasi: 'Gunung Bromo',
+      kota: 'Malang',
+      img_url: 'bg_merapi.jpg',
+      deskripsi: 'Petualngan di gunung bromo',
+      itenerary:[
+        
+      ]
+    },
+    {
+      nama: 'Explore Ubud 2D1N',
+      durasi: '2D1N',
+      bintang: '4',
+      rating: '8.8',
+      harga: 280000,
+      tanggal_berangkat: '05-06-2019',
+      tanggal_pulang: '06-06-2019',
+      lokasi: 'Ubud',
+      kota: 'Denpasar',
+      img_url: 'bg_ubud.jpg',
+      deskripsi: 'Bali cultural adventure',
+      itenerary:[
+        
+      ]
     }
   ],
   flight: [
