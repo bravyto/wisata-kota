@@ -159,7 +159,7 @@ var data = {
       ]
     },
     {
-      nama: 'The Sultan Hote',
+      nama: 'The Sultan Hotel',
       lokasi: 'Senayan',
       bintang: '5',
       rating: '9.3',
