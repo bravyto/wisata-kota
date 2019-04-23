@@ -1185,7 +1185,11 @@
 
 	$('.user_box').html(user_panel)
 
-	console.log(user)
+	console.log(localStorage.getItem("cart"))
+	if(localStorage.getItem("users") == null) {localStorage.setItem("cart", JSON.stringify(data.users));}
+	if(localStorage.getItem("cart") == null) {localStorage.setItem("cart", JSON.stringify(data.cart));}
+	if(localStorage.getItem("transaction_history") == null) {localStorage.setItem("cart", JSON.stringify(data.transaction_history));}
+	console.log(localStorage.getItem("cart"))
 </script>
 
 </body>
