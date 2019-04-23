@@ -539,7 +539,7 @@
 									<div><div class="contact_info_icon"><img src="images/message.svg" alt=""></div></div>
 									<div class="contact_info_text"><a href="mailto:contactme@gmail.com?Subject=Hello" target="_top">contact@wisata-kota.com</a></div>
 								</li>
-		
+
 							</ul>
 						</div>
 					</div>
@@ -601,7 +601,7 @@
         </div>
       </div>
 		`
-	
+
     $('.offers_grid').html(offer_items)
   })
 
@@ -625,6 +625,25 @@
   function moneyFormat (value){
     return value.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ".");
   }
+
+
+		var user = JSON.parse(localStorage.getItem("logged_user"))
+
+		if (user == null) {
+			var user_panel = `
+				<div class="user_box_login user_box_link"><a href="login.html">login</a></div>
+				<div class="user_box_register user_box_link"><a href="register.html">register</a></div>
+			`
+		} else {
+			var user_panel = `
+				<div class="user_box_login user_box_link"><a href="#">Hai ${user['nama']}</a></div>
+				<div class="user_box_register user_box_link"><a href="logout.html">logout</a></div>
+			`
+		}
+
+		$('.user_box').html(user_panel)
+
+		console.log(user)
 </script>
 
 </body>

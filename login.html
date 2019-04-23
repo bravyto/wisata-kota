@@ -64,14 +64,16 @@
       var password = document.getElementById("login__password").value;
 
       $.each(users, function(index,user) {
-        console.log(user)
+        // console.log(user)
         if ( email == user['email'] && password == user['password']) {
           window.location.href = "index.html";
-          return false;
+          document.getElementById("wrong_credential").innerHTML = "";
+          localStorage.setItem("logged_user", JSON.stringify(user));
+          // return false;
         } else {
           document.getElementById("wrong_credential").innerHTML = "Wrong email or password";
         }
       });
-      
+
     })
   </script>
